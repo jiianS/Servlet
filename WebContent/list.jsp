@@ -21,6 +21,9 @@
 	
 		if(list == null){
 			list = new ArrayList<ListBean>();
+			list.add(new ListBean("HTML", "HTML is...."));
+			list.add(new ListBean("CSS", "CSS is. ..."));
+			list.add(new ListBean("JAVASCRIPT", "JAVASCRIPT...is ...."));
 			request.getSession().setAttribute("list",list);
 		}	
 		String html = "";
@@ -32,12 +35,16 @@
 		
 		System.out.println(html);
 	%>
-	<%=html%>
+	<%=html%>	
 
 	<%
 		String key = request.getParameter("key");
 		System.out.println(key);
-
+	%>
+	
+	 
+	
+	<%
 		String contents = "";
 
 		for (int i = 0; i < list.size(); i++) {
@@ -46,7 +53,13 @@
 				contents = list.get(i).getContents();
 			}
 		}
+	
+		String del= "  <a href=delete.jsp>삭제</a><br>"; 
+		String up = "<a href=update.jsp>수정</a>";
 	%>
-	<%=contents%>
+	<p><%=key %></p> <%=up%> <%=del%>
+	<%=contents %>
+		
+	
 </body>
 </html>
