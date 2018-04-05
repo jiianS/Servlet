@@ -3,6 +3,7 @@
   <display-name>Servlet</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
+    <welcome-file>list.jsp</welcome-file>
   </welcome-file-list>
   
   	<servlet>
@@ -12,7 +13,6 @@
   	<servlet-mapping>
   		<servlet-name>Main</servlet-name>
   		<url-pattern>/M</url-pattern>
-  	
   	</servlet-mapping>
   
 </web-app>
