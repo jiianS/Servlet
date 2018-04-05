@@ -29,7 +29,6 @@
 		String contents = request.getParameter("contents");
 		list.add(new ListBean(title,contents));
 		request.getSession().setAttribute("list", list);
-
 %>
 	<h1>글 작성이 완료 되었습니다.</h1>
 	<a href ="list.jsp">목록</a>

@@ -12,26 +12,28 @@
 <body>
 <%
 	List<ListBean> list = (ArrayList<ListBean>) request.getSession().getAttribute("list");
-	String title = request.getParameter("title");
 	
+	String key= request.getParameter("key");
+	String upcontent = request.getParameter("contents");
 	
 	
 %>
 	<h1>글 수정 화면 입니다.</h1>
 	<form>
-		<input type="hidden" name="title" >
+		<input type="text" name="title" >
 		<input type="text" name="contents" placeholder="내용을 작성하세요">
 		<input type="submit" value="저장">
 	</form>	
 <%
-	
-		String upcontent = request.getParameter("contents");
-		list.add(new ListBean(title,upcontent));
-		request.getSession().setAttribute("list", list);
-
+	/*	if(key.equals("title")){
+			String upcontent = request.getParameter("contents");
+			list.add(new ListBean(key,upcontent));
+			request.getSession().setAttribute("list", list);
+		}*/
 %>
-	<h1> </h1>
-	<a href ="list.jsp">목록</a>
+<%=key %>
+
+<%=list %>
 
 
 </body>

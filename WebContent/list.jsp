@@ -41,7 +41,7 @@
 		String key = request.getParameter("key");
 		System.out.println(key);
 	%>
-	
+	<%=key %>
 	 
 	
 	<%
@@ -54,10 +54,11 @@
 			}
 		}
 	
-		String del= "  <a href=delete.jsp>삭제</a><br>"; 
-		String up = "<a href=update.jsp>수정</a>";
+		
+		String del= "  <a href=delete.jsp?key="+ key +">삭제</a><br>"; 
+		String up = "<a href=update.jsp?key="+ key +">수정</a>";
 	%>
-	<p><%=key %></p> <%=up%> <%=del%>
+	<%=up%> <%=del%>
 	<%=contents %>
 		
 	
