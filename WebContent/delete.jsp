@@ -11,12 +11,20 @@
 </head>
 <body>
 	<%
-		List<ListBean> list= (ArrayList<ListBean>) request.getSession().getAttribute("list");
-	%>
-	<%=list %>
+   List<ListBean> list=(ArrayList<ListBean>) request.getSession().getAttribute("list");
+   String key = request.getParameter("key");
+   
+   for (int i=0; i<list.size();i++){
+      if(list.get(i).getTitle().equals(key)){
+         System.out.println(list.get(i).getTitle());   
+         list.remove(i);
+      	}
+      }
 
-
-	<h1>삭제 되엇습니다.</h1>
-	<a href="list.jsp"> 목록</a>
+    String back="<a href='list.jsp'>목록</a><br>" ;
+   String succes="삭제가 완료되었습니다.";
+%>
+   <%=succes %>
+   <%=back %>
 </body>
 </html>

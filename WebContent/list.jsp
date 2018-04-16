@@ -58,8 +58,8 @@
 		String del= "  <a href=delete.jsp?key="+ key +">삭제</a><br>"; 
 		String up = "<a href=update.jsp?key="+ key +">수정</a>";
 	%>
-	<%=up%> <%=del%>
-	<%=contents %>
+	<%=contents %> <%=up %> <%=del%>
+	%>
 		
 	
 </body>
